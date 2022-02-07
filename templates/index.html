@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/reset.css" />
+    <link rel="stylesheet" href="../static/dist/css/styles.css" />
+    <title>모두의 인강</title>
+  </head>
+  <body>
+    <main>
+      <div class="hero">
+        <h2>원하는 강의를 검색해 보세요 👀</h2>
+        <form action="/search" method="get">
+          <input
+            type="search"
+            placeholder="serach"
+            aria-label="Search"
+            name="word"
+          />
+        </form>
+        <div class="center">
+          <img
+            src="../static/dist/images/fastcampus.png"
+            style="max-width: 25%; height: auto"
+          />
+          <img
+            src="../static/dist/images/inflearn.png"
+            style="max-width: 25%; height: auto"
+          />
+        </div>
+      </div>
+      <div class="links">
+        {% for language in languages %}
+        <div class="link">
+          <h4>{{language['name']}}</h4>
+          <a href="/?word={{language['name']}}">
+            <img src="{{language['img']}}" alt="..." />
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </main>
+    <footer>
+      <div class="footer__top">
+        <span>yulotts</span>
+        <ul>
+          <li>fastcampus</li>
+          <li>inflearn</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

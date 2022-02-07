@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='dist/css/styles.css')}}"
+    />
+    <title>모두의 인강</title>
+  </head>
+  <body>
+    <main>
+      <div class="hero">
+        <h2>
+          <code>{{word}}</code>에 대한 <code>{{count}}개</code>의 검색 결과
+        </h2>
+        <div>
+          <a href="/export?word={{word}}" class="btn">Export CSV file</a>
+          <a href="/" class="btn">뒤로가기</a>
+        </div>
+      </div>
+      <section class="products">
+        {% for course in courses %}
+        <article class="product">
+          <div>
+            <h4 class="product__category">{{course['title']}}</h4>
+            <p class="product__description">{{course['description']}}</p>
+            <a href="{{course['link']}}" class="btn" target="_blank"
+              >강의보러가기</a
+            >
+          </div>
+          {% if course.img %}
+          <img src="{{course['img']}}" />
+          {% else %}
+          <video muted loop autoplay playsinline width="100%">
+            <source src="{{course['video']}}" type="video/mp4" />
+          </video>
+          {% endif %}
+        </article>
+        {% endfor %}
+      </section>
+    </main>
+    <footer>
+      <div class="footer__top">
+        <span>yulotts</span>
+        <ul>
+          <li>fastcampus</li>
+          <li>inflearn</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
