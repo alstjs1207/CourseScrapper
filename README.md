@@ -2,7 +2,12 @@
 
 ## what?
 
-fastcampus, inflearn의 강의를 한번에 조회하여 강의 정보를 보여줍니다.
+온라인 강의를 한번에 조회하여 강의 정보를 보여줍니다.
+
+- [x] fastcampus
+- [x] inflearn
+- [ ] class 101
+- [ ] taling
 
 ## main page
 
@@ -27,6 +32,8 @@ $ FLASK_APP=main.py flask run
 * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 
 ```
+
+## GO
 
 ```
 http://127.0.0.1:5000
